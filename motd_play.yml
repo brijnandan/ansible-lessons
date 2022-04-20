@@ -18,3 +18,8 @@
         content: "{{ motd_ubuntu }}"
         dest: /etc/motd
       when: ansible_distribution == "Ubuntu"
+    - name:  install a package
+      apt:
+        name:  tree
+        state:  present
+        update_cache:  yes
