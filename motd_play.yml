@@ -1,0 +1,20 @@
+3yaml document start with ---
+---
+- # this minus is required in yaml it indicates list of items. playbook contains the list of plays and every play will be a dictonary
+#host where you want to run your playbook.
+hosts: client
+#vars: variable that will apply to the play
+vars:   #is  a keyword
+  motd_centos: "welcome to centos"
+  motd_ubuntu: "welcome to ybuntu" 
+tasks:
+  - name:  configure as motd nessage in centos
+    copy: 
+      content: "{{ motd_centos }}"
+      dest:  /etc/motd
+    when: ansible_distribution == "Redhat"
+  - name: configure as motd nessage in ubuntu
+    copy: 
+      content: "{{ motd_ubuntu }}"
+      dest: /etc/motd
+    when: ansible_discribution == "Ubuntu"
