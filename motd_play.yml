@@ -17,4 +17,4 @@
       copy: 
         content: "{{ motd_ubuntu }}"
         dest: /etc/motd
-      when: ansible_discribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu"
