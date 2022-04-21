@@ -12,3 +12,7 @@
       fetch:
         src: /tmp/test.txt
         dest: /tmp/
+
+
+
+        #Copied a file from node to ansible master
